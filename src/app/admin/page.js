@@ -51,23 +51,86 @@ export default function AdminDashboard() {
   if (!isAuthenticated) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8fafc' }}>
-        <div style={{ backgroundColor: 'white', padding: '3rem', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', width: '100%', maxWidth: '400px' }}>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '2rem', textAlign: 'center' }}>Admin Access</h1>
+        <div style={{ 
+          backgroundColor: 'white', 
+          padding: '3rem', 
+          borderRadius: '16px', 
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', 
+          width: '100%', 
+          maxWidth: '420px',
+          animation: 'fadeInTrans 0.5s ease-out'
+        }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes fadeInTrans { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes spinLoader { to { transform: rotate(360deg); } }
+            .spinner-icon {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              border: 2px solid rgba(255,255,255,0.3);
+              border-radius: 50%;
+              border-top-color: #fff;
+              animation: spinLoader 1s linear infinite;
+              margin-right: 10px;
+            }
+          `}} />
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div style={{ width: '50px', height: '50px', background: '#0f172a', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'white', fontWeight: 'bold', fontSize: '1.2rem' }}>AT</div>
+            <h1 style={{ fontSize: '1.5rem', fontWeight: '900', color: '#0f172a' }}>Admin Access</h1>
+            <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your secure passcode to manage entries.</p>
+          </div>
+          
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             <input 
               type="password" 
-              placeholder="Enter Passcode" 
+              placeholder="••••••••" 
               value={passcode}
               onChange={e => setPasscode(e.target.value)}
               onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); handleLogin(e); } }}
               autoFocus
-              style={{ width: '100%', padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px', marginBottom: '1.5rem', fontSize: '1rem' }}
+              disabled={loading}
+              style={{ 
+                width: '100%', 
+                padding: '1rem 1.2rem', 
+                border: '2px solid #e2e8f0', 
+                borderRadius: '10px', 
+                fontSize: '1rem',
+                outline: 'none',
+                marginBottom: '1.5rem',
+                transition: 'border-color 0.2s',
+                backgroundColor: loading ? '#f8fafc' : 'white'
+              }}
             />
-            <button type="submit" style={{ width: '100%', padding: '1rem', background: '#0f172a', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
-              Login to Dashboard
+            <button 
+              type="submit" 
+              disabled={loading}
+              style={{ 
+                width: '100%', 
+                padding: '1rem', 
+                background: '#0f172a', 
+                color: 'white', 
+                border: 'none', 
+                borderRadius: '10px', 
+                fontWeight: 'bold', 
+                cursor: loading ? 'not-allowed' : 'pointer', 
+                fontSize: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s',
+                opacity: loading ? 0.8 : 1
+              }}
+            >
+              {loading ? (
+                <><span className="spinner-icon"></span> Validating Passcode...</>
+              ) : (
+                'Grant Access'
+              )}
             </button>
           </form>
-          <Link href="/login" style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem', color: '#64748b', textDecoration: 'none', fontSize: '0.9rem' }}>Back to Login Portal</Link>
+          <div style={{ marginTop: '2rem', textAlign: 'center', borderTop: '1px solid #f1f5f9', paddingTop: '1.5rem' }}>
+            <Link href="/" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '600' }}>← Back to Website</Link>
+          </div>
         </div>
       </div>
     );
