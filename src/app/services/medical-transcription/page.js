@@ -29,7 +29,7 @@ export default function MedicalTranscriptionPage() {
             <h2 className={styles.deliveredTitle}>Delivered Fast.</h2>
             <p className={styles.deliveredText}>
               Advance Transcription provides fast, secure, and highly accurate medical transcription services tailored to the needs 
-              of today's healthcare providers. Whether you run a solo practice or a multi-provider clinic, our team ensures 
+              of today{"'"}s healthcare providers. Whether you run a solo practice or a multi-provider clinic, our team ensures 
               that your dictated notes are transcribed clearly, consistently, and with full HIPAA compliance. We leverage 
               skilled professionals and advanced tools to deliver documentation you can trust.
             </p>
@@ -117,7 +117,7 @@ export default function MedicalTranscriptionPage() {
              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: '1.7' }}>
                We adapt to your preferred templates, formatting style, and workflow at no additional cost. 
                Whether you use structured SOAP notes, narrative reports, or specialty-specific formats, 
-               we'll match your exact requirements — and adjust as you evolve.
+               we{"'"}ll match your exact requirements — and adjust as you evolve.
              </p>
 
              <div className={styles.checklist}>

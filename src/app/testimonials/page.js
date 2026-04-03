@@ -65,7 +65,7 @@ export default function TestimonialsPage() {
           <div className={styles.testimonialGrid}>
             {testimonials.map((t, i) => (
               <div key={i} className={styles.card}>
-                <div className={styles.quoteIcon}>"</div>
+                <div className={styles.quoteIcon}>{"\""}</div>
                 <p className={styles.testimonialText}>
                   {t.text}
                 </p>

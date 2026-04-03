@@ -29,7 +29,7 @@ export default function LegalTranscriptionPage() {
             <h2 className={styles.deliveredTitle}>Confidentiality & Precision.</h2>
             <p className={styles.deliveredText}>
                We specialize in handling sensitive content where precision and confidentiality are non-negotiable. 
-               Whether it's dictated case notes or full medicolegal evaluations, our experienced 
+               Whether it{"'"}s dictated case notes or full medicolegal evaluations, our experienced 
                transcriptionists ensure every detail is captured accurately. We are a strategic partner 
                committed to supporting your operations with efficiency and professionalism.
             </p>
@@ -68,7 +68,7 @@ export default function LegalTranscriptionPage() {
             <div className={styles.busyCard}>
                <div className={styles.busyIcon}>📄</div>
                <h3 className={styles.busyCardTitle}>Documentation</h3>
-               <p className={styles.busyCardText}>Workers’ Compensation, Peer Reviews, & Witness Interviews</p>
+               <p className={styles.busyCardText}>Workers{"'"}s Compensation, Peer Reviews, & Witness Interviews</p>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function LegalTranscriptionPage() {
              <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontWeight: '900' }}>Reliable. Confidential. Always On Time.</h2>
              <p style={{ maxWidth: '750px', margin: '0 auto 3rem auto', color: '#94a3b8', fontSize: '1.2rem', lineHeight: '1.6' }}>
                 At Advance Transcription, we combine speed, accuracy, and attention to detail to support legal professionals. 
-                Whether you need one report or ongoing transcription support, we’re here to help — 
+                Whether you need one report or ongoing transcription support, we{"'"}re here to help — 
                 with no compromise on quality or turnaround.
              </p>
              <Link href="/#contact" className="btn-primary" style={{ padding: '1.25rem 3.5rem', borderRadius: '50px', background: '#38bdf8', color: '#0f172a' }}>GET STARTED NOW</Link>
