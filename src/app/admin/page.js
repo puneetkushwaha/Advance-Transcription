@@ -7,7 +7,7 @@ export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcode, setPasscode] = useState('');
   const [data, setData] = useState({ contacts: [], demo_requests: [], signups: [] });
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('demo_requests');
 
   const handleLogin = async (e) => {
