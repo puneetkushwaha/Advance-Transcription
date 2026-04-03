@@ -1,0 +1,139 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contactHero {
+  padding: 6rem 0 4rem 0;
+  background-color: #0d2a4a;
+  text-align: center;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  padding: 6rem 0;
+  align-items: stretch;
+}
+
+.infoSection h3 {
+  font-size: 1.5rem;
+  color: #10b981;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.infoBlock {
+  margin-bottom: 3rem;
+}
+
+.infoItem {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.infoLabel {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Form Styling */
+.formWrapper {
+  background-color: white;
+  padding: 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.formTitle {
+  font-size: 2.2rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.formSubtitle {
+  color: #10b981;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: #10b981;
+  color: white;
+  width: 100%;
+  padding: 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submitBtn:hover {
+  background-color: #059669;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

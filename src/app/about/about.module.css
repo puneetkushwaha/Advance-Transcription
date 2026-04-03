@@ -1,0 +1,230 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.aboutHero {
+  padding: 8rem 0 4rem 0;
+  background-color: #f8fafc;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.heroTitle {
+  font-size: 5.5rem;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+/* Precision Section */
+.precisionSection {
+  padding: 8rem 0;
+  background-color: white;
+}
+
+.precisionTitle {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #0d9488;
+  margin-bottom: 2rem;
+}
+
+.precisionText {
+  font-size: 1.2rem;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+/* Trust Stats Bar */
+.statsSection {
+  padding: 4rem 0;
+  background-color: #f0fdf4;
+  border-top: 1px solid #dcfce7;
+  border-bottom: 1px solid #dcfce7;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #059669;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #065f46;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Mission & Vision Cards */
+.missionSection {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.missionCard {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.missionCard:hover {
+  transform: translateY(-10px);
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.cardTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background: #0d9488;
+}
+
+.cardText {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* What Sets Us Apart Grid - 5 columns */
+.apartSection {
+  padding: 8rem 0;
+  background-color: #f8fafc;
+}
+
+.apartGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.apartCard {
+  background: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.apartCard:hover {
+  border-color: #0d9488;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.apartIcon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1.5rem auto;
+  color: #0d9488;
+}
+
+.apartTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.apartText {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Who We Serve Section */
+.whoSection {
+  padding: 8rem 0;
+  background-color: white;
+}
+
+.whoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.whoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.whoItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.whoIcon {
+  font-size: 1.5rem;
+}
+
+.whoText {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .apartGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .apartGrid {
+    grid-template-columns: 1fr;
+  }
+  .whoGrid {
+    grid-template-columns: 1fr;
+  }
+}

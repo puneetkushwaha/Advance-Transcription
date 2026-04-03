@@ -1,0 +1,194 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pricingHero {
+  padding: 6rem 0 4rem 0;
+  background-color: #0f172a;
+  text-align: center;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.subHero {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: white;
+}
+
+.subTitle {
+  font-size: 2rem;
+  color: #10b981;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.subText {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Rates Table */
+.ratesSection {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.ratesTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #10b981;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ratesTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ratesTable th {
+  background-color: #0d2a4a;
+  color: white;
+  padding: 1.25rem 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.ratesTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.ratesTable tr:hover {
+  background-color: #f9fafb;
+}
+
+.rateValue {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+/* Unlimited Plan Section */
+.unlimitedSection {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.unlimitedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.unlimitedTitle {
+  font-size: 2.5rem;
+  color: #059669;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.priceTag {
+  font-size: 3rem;
+  color: #ef4444;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.checkIcon {
+  color: #3b82f6;
+  font-weight: 900;
+}
+
+/* Always Included */
+.includedSection {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.includedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Custom Pricing */
+.customSection {
+  padding: 6rem 0;
+  background-image: linear-gradient(rgba(240, 253, 244, 0.9), rgba(240, 253, 244, 0.9)), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Billing Details */
+.billingSection {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.billingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.btnAction {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .unlimitedGrid, .includedGrid, .billingGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}

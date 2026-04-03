@@ -1,0 +1,151 @@
+:root {
+  --background: #ffffff;
+  /* Pure White */
+  --foreground: #333333;
+  /* Dark Grey for text */
+  --primary: #0088cc;
+  /* Epic Transcription's standard blue */
+  --primary-hover: #006699;
+  --accent: #ff6600;
+  /* Subtle orange/red accent if needed, though Epic uses primarily blue */
+  --surface: #f9fafb;
+  /* Off-white for sections */
+  --border: #e5e7eb;
+  /* Light grey border */
+  --font-sans: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --navbar-bg: #ffffff;
+  --footer-bg: #1e293b;
+  --footer-text: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Corporate Utilities */
+.corporate-panel {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  /* Flatter radius like Epic */
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline:hover {
+  background-color: #f0f7ff;
+}
+
+/* Base Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+  /* Medium grey */
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Helper sections */
+.section-grey {
+  background-color: var(--surface);
+  padding: 4rem 0;
+}
+
+.section-white {
+  background-color: #ffffff;
+  padding: 4rem 0;
+}
+
+/* Footer Developer Credit */
+.footer-dev-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+
+.footer-dev-link:hover {
+  color: #38bdf8;
+}
