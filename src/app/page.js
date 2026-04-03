@@ -334,7 +334,7 @@ export default function Home() {
           <div style={{ color: '#10b981', fontSize: '3rem', marginBottom: '1.5rem' }}>💎</div>
           <h2 style={{ fontSize: '2rem', color: '#0f172a', fontWeight: '800', marginBottom: '1.5rem' }}>Trusted by Healthcare Providers, IME Specialists, and Legal Professionals Nationwide</h2>
           <p style={{ fontSize: '1.15rem', color: '#475569', lineHeight: '1.7', margin: '0 auto' }}>
-            At Advance Transcription, we’re proud to serve a wide range of clients — from busy medical practices and IME evaluators to attorneys and independent providers. Here’s what some of them have to say about our service:
+            At Advance Transcription, we{"'"}re proud to serve a wide range of clients — from busy medical practices and IME evaluators to attorneys and independent providers. Here{"'"}s what some of them have to say about our service:
           </p>
         </div>
       </section>
@@ -356,7 +356,7 @@ export default function Home() {
               </svg>
             </div>
 
-            <h3 style={{ fontSize: '1.5rem', color: '#0f172a', fontWeight: '800', marginBottom: '1rem' }}>Let’s Connect</h3>
+            <h3 style={{ fontSize: '1.5rem', color: '#0f172a', fontWeight: '800', marginBottom: '1rem' }}>Let{"'"}s Connect</h3>
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: '1.6', marginBottom: '2.5rem' }}>
               If you are seeking a reliable transcription partner that understands the unique demands of the healthcare industry, we invite you to get in touch.
             </p>

@@ -30,7 +30,7 @@ export default function IMETranscriptionPage() {
             <h2 className={styles.deliveredTitle}>Defensible Accuracy.</h2>
             <p className={styles.deliveredText}>
                We understand the high stakes involved in IME reporting — where every detail must be clear, objective, and defensible. 
-               That’s why the Advance Transcription team is trained to handle complex medical-legal language, 
+               That{"'"}s why the Advance Transcription team is trained to handle complex medical-legal language, 
                structured templates, and strict formatting standards required for these reports. 
                Our transcription services are designed to support your workflow — not interrupt it.
             </p>
@@ -102,7 +102,7 @@ export default function IMETranscriptionPage() {
              <div className={styles.ehrItem}>✅ Disability Determinations</div>
              <div className={styles.ehrItem}>✅ Functional Capacity Evaluations</div>
              <div className={styles.ehrItem}>✅ Addendums and Record Reviews</div>
-             <div className={styles.ehrItem}>✅ Workers’ Compensation</div>
+             <div className={styles.ehrItem}>✅ Workers{"'"}s Compensation</div>
              <div className={styles.ehrItem}>✅ Auto Injury Assessments</div>
              <div className={styles.ehrItem}>✅ Pre-employment Evaluations</div>
              <div className={styles.ehrItem}>✅ Peer Reviews</div>

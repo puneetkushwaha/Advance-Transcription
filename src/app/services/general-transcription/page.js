@@ -28,7 +28,7 @@ export default function GeneralTranscriptionPage() {
           <div>
             <h2 className={styles.deliveredTitle}>Clean. Clear. Consistent.</h2>
             <p className={styles.deliveredText}>
-               Whether you’re recording interviews, meetings, webinars, or documentation for internal use, 
+               Whether you{"'"}re recording interviews, meetings, webinars, or documentation for internal use, 
                we deliver transcripts that are clear, consistent, and tailored to your formatting needs. 
                Our transcription services are designed to support your workflow — not interrupt it.
                We combine speed, accuracy, and attention to detail to support professionals across industries.
@@ -104,7 +104,7 @@ export default function GeneralTranscriptionPage() {
              <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontWeight: '900' }}>Reliable. Confidential. Always On Time.</h2>
              <p style={{ maxWidth: '750px', margin: '0 auto 3rem auto', color: '#94a3b8', fontSize: '1.2rem', lineHeight: '1.6' }}>
                 At Advance Transcription, we understand the specific needs of the academic and corporate sectors. 
-                Whether you need one report or ongoing transcription support, we’re here to help.
+                Whether you need one report or ongoing transcription support, we{"'"}re here to help.
              </p>
              <Link href="/#contact" className="btn-primary" style={{ padding: '1.25rem 3.5rem', borderRadius: '50px', background: '#38bdf8', color: '#0f172a' }}>START YOUR PROJECT</Link>
           </div>

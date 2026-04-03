@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
           <div style={{ background: '#ffffff', borderRadius: '12px', padding: '3rem', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
 
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: '1.8', marginBottom: '2rem' }}>
-              Advance Transcription ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services or visit our website. Please read this policy carefully.
+              Advance Transcription ({"\""}we,{"\""} {"\""}our,{"\""} or {"\""}us{"\""}) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services or visit our website. Please read this policy carefully.
             </p>
 
             {[

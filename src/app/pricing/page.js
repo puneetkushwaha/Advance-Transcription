@@ -26,7 +26,7 @@ export default function PricingPage() {
           <h2 className={styles.subTitle}>Clear, Competitive, and Commitment-Free</h2>
           <p className={styles.subText}>
             At Advance Transcription, we believe in straightforward pricing with no hidden fees, 
-            setup costs, or minimum usage requirements. Whether you're a solo provider, 
+            setup costs, or minimum usage requirements. Whether you{"'"}re a solo provider, 
             a legal evaluator, or part of a hospital network, we offer flexible options to 
             meet your documentation needs and budget.
           </p>
@@ -111,7 +111,7 @@ export default function PricingPage() {
         <div className={styles.container}>
           <div className={styles.includedGrid}>
             <div>
-              <h2 style={{ fontSize: '2.8rem', color: '#059669', fontWeight: '800', marginBottom: '3rem' }}>What's Always Included</h2>
+              <h2 style={{ fontSize: '2.8rem', color: '#059669', fontWeight: '800', marginBottom: '3rem' }}>What{"'"}s Always Included</h2>
               <ul className={styles.featureList}>
                 <li className={styles.featureItem}><span className={styles.checkIcon}>✓</span> Free account setup</li>
                 <li className={styles.featureItem}><span className={styles.checkIcon}>✓</span> Free template customization</li>

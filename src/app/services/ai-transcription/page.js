@@ -81,7 +81,7 @@ export default function AITranscriptionPage() {
             <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#0f172a' }}>Best Suited For</h2>
             <p style={{ color: '#475569', maxWidth: '800px', margin: '1.5rem auto', fontSize: '1.1rem' }}>
               AI transcription uses advanced machine learning models to automatically convert speech to text. 
-              It’s best suited for clear, structured recordings such as:
+              It{"'"}s best suited for clear, structured recordings such as:
             </p>
           </div>
 
