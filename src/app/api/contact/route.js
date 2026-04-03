@@ -123,7 +123,7 @@ export async function POST(request) {
 
                 <div style="text-align: center; margin-top: 40px;">
                   <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">Need immediate assistance? Speak with us at +1 (727) 308-2312.</p>
-                  <a href="https://advance-transcription-omega.vercel.app/pricing" style="display: inline-block; background: #0047ff; color: #ffffff !important; padding: 14px 32px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
+                  <a href="https://advancetranscription.com/pricing" style="display: inline-block; background: #0047ff; color: #ffffff !important; padding: 14px 32px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
                     Explore Service Plans
                   </a>
                 </div>

@@ -118,7 +118,7 @@ export async function POST(request) {
 
                 <div style="text-align: center; margin-top: 40px;">
                   <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">Questions about the process? Reply to this email or visit our Help Center.</p>
-                  <a href="https://advance-transcription-omega.vercel.app/services/medical-transcription" style="display: inline-block; background: #0047ff; color: #ffffff !important; padding: 14px 32px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
+                  <a href="https://advancetranscription.com/services/medical-transcription" style="display: inline-block; background: #0047ff; color: #ffffff !important; padding: 14px 32px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
                     Learn More About Our Tech
                   </a>
                 </div>
