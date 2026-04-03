@@ -45,7 +45,7 @@ export default function ContactUsPage() {
           </div>
           <h1 className={styles.heroTitle}>Contact Us</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.1rem', maxWidth: '600px', margin: '1rem auto 0 auto' }}>
-            We're here to help you optimize your documentation workflow.
+            We{"'"}re here to help you optimize your documentation workflow.
           </p>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function ContactUsPage() {
               ) : (
                 <>
                   <h2 className={styles.formTitle}>Request a Consultation</h2>
-                  <p className={styles.formSubtitle}>We’re Here To Help</p>
+                  <p className={styles.formSubtitle}>We{"'"}re Here To Help</p>
                   
                   <form onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
