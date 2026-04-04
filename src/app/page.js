@@ -222,11 +222,7 @@ export default function Home() {
               <div className={styles.phoneScreen}>
                 {/* Brand Logo inside phone */}
                 <div style={{ textAlign: 'center', margin: '3.5rem 0 2rem 0' }}>
-                  <img src="/transparent.png" alt="Logo" style={{ width: '60px', height: 'auto', marginBottom: '0.5rem' }} />
-                  <div style={{ color: 'var(--primary)', fontWeight: 'bold', fontSize: '1.25rem', lineHeight: '1.1' }}>
-                    Advance<br />
-                    <span style={{ color: '#0f172a', fontSize: '1.05rem' }}>Transcription</span>
-                  </div>
+                  <img src="/transparent.png" alt="Logo" style={{ width: '100px', height: 'auto', marginBottom: '0.5rem' }} />
                 </div>
 
                 {/* Content inside phone */}

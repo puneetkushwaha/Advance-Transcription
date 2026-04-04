@@ -69,7 +69,7 @@ export default function Signup() {
         {/* Left Side: Information */}
         <div style={{ padding: '2rem 0' }}>
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/transparent.png" alt="Logo" style={{ height: '80px', width: 'auto' }} />
+            <img src="/transparent.png" alt="Logo" style={{ height: '120px', width: 'auto' }} />
           </div>
           <div style={{ color: 'var(--primary)', fontWeight: '900', fontSize: '1.2rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Enrollment Form</div>
           <h1 style={{ fontSize: '3.5rem', color: '#0f172a', fontWeight: '900', marginBottom: '2rem', lineHeight: '1.1' }}>Join Advance Transcription Today</h1>

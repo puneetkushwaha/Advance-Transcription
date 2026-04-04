@@ -8,7 +8,7 @@ export default function LoginPortal() {
     <div style={{ minHeight: '100vh', backgroundColor: '#fcfcfc', padding: '6rem 0' }}>
       <div className="container" style={{ textAlign: 'center' }}>
         <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
-          <img src="/transparent.png" alt="Logo" style={{ height: '80px', width: 'auto' }} />
+          <img src="/transparent.png" alt="Logo" style={{ height: '120px', width: 'auto' }} />
         </div>
         <h1 style={{ fontSize: '3.5rem', color: '#0f172a', fontWeight: '900', marginBottom: '5rem' }}>Client Login</h1>
         

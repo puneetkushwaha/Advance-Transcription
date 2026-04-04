@@ -139,11 +139,16 @@ p {
 }
 
 /* Footer Developer Credit */
-.footer-dev-link {
-  color: #94a3b8;
-  text-decoration: none;
-  font-size: 0.8rem;
+.footer-dev-link:hover {
+  color: var(--primary);
+}
+
+.footer-link {
   transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--primary) !important;
 }
 
 
