@@ -75,7 +75,9 @@ export default function AdminDashboard() {
             }
           `}} />
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div style={{ width: '50px', height: '50px', background: '#0f172a', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'white', fontWeight: 'bold', fontSize: '1.2rem' }}>AT</div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <img src="/transparent.png" alt="Logo" style={{ height: '60px', width: 'auto' }} />
+            </div>
             <h1 style={{ fontSize: '1.5rem', fontWeight: '900', color: '#0f172a' }}>Admin Access</h1>
             <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your secure passcode to manage entries.</p>
           </div>
@@ -140,8 +142,8 @@ export default function AdminDashboard() {
     <div style={{ minHeight: '100vh', backgroundColor: '#f1f5f9' }}>
       {/* Top Nav */}
       <nav style={{ backgroundColor: '#0f172a', color: 'white', padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ fontWeight: '900', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ width: '30px', height: '30px', border: '2px solid white', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem' }}>AT</div>
+        <div style={{ fontWeight: '900', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <img src="/transparent.png" alt="Logo" style={{ height: '35px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
           Admin Central
         </div>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>

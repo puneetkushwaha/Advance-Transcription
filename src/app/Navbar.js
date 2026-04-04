@@ -29,11 +29,12 @@ export default function Navbar() {
       <nav style={{ backgroundColor: 'var(--navbar-bg)', padding: '1.25rem 0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', position: 'sticky', top: 0, zIndex: 1000 }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            {/* Logo Placeholder */}
-            <div style={{ width: '45px', height: '45px', border: '2px solid var(--primary)', color: 'var(--primary)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800' }}>
-              AT
-            </div>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img 
+              src="/transparent.png" 
+              alt="Advance Transcription Logo" 
+              style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
+            />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#111827', lineHeight: '1.2' }}>
                 Advance

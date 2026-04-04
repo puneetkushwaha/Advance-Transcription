@@ -26,6 +26,13 @@ export default function RootLayout({ children }) {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', paddingBottom: '3rem' }}>
                 {/* Column 1 */}
                 <div>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <img 
+                      src="/transparent.png" 
+                      alt="Advance Transcription Logo" 
+                      style={{ height: '50px', width: 'auto', filter: 'brightness(0) invert(1)' }} 
+                    />
+                  </div>
                   <h3 style={{ fontSize: '1.2rem', color: 'white', borderBottom: '2px solid var(--primary)', paddingBottom: '0.5rem', display: 'inline-block', marginBottom: '1.5rem' }}>About Us</h3>
                   <p style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
                     Advance Transcription is a premier healthcare-focused transcription service committed to delivering timely, accurate, and secure documentation.
