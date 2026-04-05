@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           {/* Epic-style Footer */}
           <footer style={{ backgroundColor: 'var(--footer-bg)', color: 'var(--footer-text)', padding: '4rem 0 0 0', borderTop: '4px solid var(--primary)' }}>
             <div className="container">
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', paddingBottom: '3rem' }}>
+              <div className="footer-grid">
                 {/* Column 1 */}
                 <div>
                   <div style={{ marginBottom: '1.5rem' }}>
@@ -76,8 +76,8 @@ export default function RootLayout({ children }) {
               </div>
             </div>
             {/* Copyright Bar */}
-            <div style={{ backgroundColor: '#0f172a', padding: '1.5rem 0', textAlign: 'center', fontSize: '0.85rem' }}>
-              <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div style={{ backgroundColor: '#0f172a', padding: '1.5rem 0', fontSize: '0.85rem' }}>
+              <div className="container footer-copyright">
                 <span>&copy; {new Date().getFullYear()} Advance Transcription. All Rights Reserved.</span>
                 <a
                   href="https://www.linkedin.com/in/puneettkushwaha/"
