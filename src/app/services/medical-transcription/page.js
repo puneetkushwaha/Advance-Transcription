@@ -24,7 +24,7 @@ export default function MedicalTranscriptionPage() {
 
       {/* Delivered Fast Section */}
       <section className={styles.deliveredFast}>
-        <div className={styles.container} style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className={`${styles.container} ${styles.deliveredGrid}`}>
           <div>
             <h2 className={styles.deliveredTitle}>Delivered Fast.</h2>
             <p className={styles.deliveredText}>
@@ -111,7 +111,7 @@ export default function MedicalTranscriptionPage() {
 
       {/* Custom Templates Section */}
       <section className={styles.templatesSection}>
-        <div className={styles.container} style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div className={`${styles.container} ${styles.templatesGrid}`}>
           <div>
              <h2 style={{ fontSize: '2.8rem', fontWeight: '900', color: '#0f172a', marginBottom: '1.5rem' }}>Custom Templates. No Extra Charge.</h2>
              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: '1.7' }}>

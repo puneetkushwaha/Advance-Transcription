@@ -5,10 +5,16 @@
 }
 
 .testimonialsHero {
-  padding: 8rem 0 6rem 0;
+  padding: 4rem 0 2.5rem 0;
   background-color: #f8fafc;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .testimonialsHero {
+    padding: 3rem 0 2rem 0;
+  }
 }
 
 .heroTitle {
@@ -17,6 +23,13 @@
   color: #0f172a;
   letter-spacing: -2.5px;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+    letter-spacing: -1px;
+  }
 }
 
 .heroSubtitle {
@@ -32,6 +45,17 @@
   justify-content: center;
   gap: 4rem;
   margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .trustStats {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .statNumber {
+    font-size: 2rem;
+  }
 }
 
 .statItem {
@@ -54,8 +78,14 @@
 }
 
 .gridSection {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .gridSection {
+    padding: 3rem 0;
+  }
 }
 
 .testimonialGrid {
@@ -71,6 +101,16 @@
   border: 1px solid #e2e8f0;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+  .testimonialText {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .card:hover {

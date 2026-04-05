@@ -22,7 +22,7 @@ export default function AboutPage() {
 
       {/* Precision Section with Image Grid */}
       <section className={styles.precisionSection}>
-        <div className={styles.container} style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div className={`${styles.container} ${styles.precisionGrid}`}>
           <div>
             <h2 className={styles.precisionTitle}>Precision. Integrity. Reliability.</h2>
             <p className={styles.precisionText}>

@@ -33,7 +33,7 @@ export default function Home() {
 
       {/* Compact & Striking Hero Section */}
       <section className={styles.heroSection}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroContent}>
             <span className={styles.badge}>HIPAA Compliant Documentation</span>
             <h1 className={styles.heroTitle}>Advanced Transcription Services</h1>
@@ -78,7 +78,7 @@ export default function Home() {
       {/* Overlapping Trust Stats */}
       <div className="container">
         <section className={styles.statsSection}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className={styles.statsGrid}>
             <div className={styles.statBlock}>
               <div className={styles.statNumber}>12<span style={{ fontSize: '1.5rem' }}>hr</span></div>
               <div className={styles.statText}>Delivery standard</div>
@@ -213,7 +213,7 @@ export default function Home() {
 
       {/* Premium How It Works Section */}
       <section id="how-it-works" className="section-white" style={{ padding: '4rem 0' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className={`container ${styles.howItWorksGrid}`}>
 
           {/* Left: Phone Graphic */}
           <div className={styles.phoneContainer}>
@@ -279,7 +279,7 @@ export default function Home() {
 
       {/* Transparent Pricing Section */}
       <section id="pricing" className={styles.sectionPadding} style={{ backgroundColor: '#ffffff', padding: '5rem 0 0 0', overflow: 'hidden' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className={`container ${styles.pricingGrid}`}>
 
           {/* Left Content */}
           <div style={{ padding: '0 2rem 2rem 2rem' }}>
@@ -336,8 +336,8 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section (White and Green Split) */}
-      <section id="contact" style={{ backgroundColor: '#ffffff', padding: '6rem 0' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) minmax(300px, 1fr)', gap: '4rem', alignItems: 'stretch' }}>
+      <section id="contact" style={{ backgroundColor: '#ffffff', padding: '6rem 0' }} className="responsive-section">
+        <div className={`container ${styles.contactGrid}`}>
 
           {/* Left Side: Text and Icon */}
           <div style={{ padding: '2rem 0', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -365,7 +365,7 @@ export default function Home() {
           </div>
 
           {/* Right Side: Form on Dark Slate Background */}
-          <div id="contactForm" style={{ background: 'linear-gradient(160deg, #1e293b 0%, #0f172a 100%)', padding: '3.5rem', borderRadius: '4px', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.3)' }}>
+          <div id="contactForm" className={styles.contactFormWrapper} style={{ background: 'linear-gradient(160deg, #1e293b 0%, #0f172a 100%)', padding: '2rem', borderRadius: '4px', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.3)' }}>
             {submitStatus === 'success' ? (
               <div style={{ padding: '2rem', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '4px', textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <svg width="60" height="60" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem' }}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>

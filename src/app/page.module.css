@@ -4,20 +4,37 @@
 }
 
 /* Striking & Compact Hero Section */
-.heroSection {
-  width: 100%;
-  height: calc(100vh - 130px);
-  /* Fits exactly without scroll */
-  min-height: 550px;
-  position: relative;
-  display: flex;
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
-  background-color: #f8fafc;
-  /* Premium dot pattern background */
-  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-  background-size: 24px 24px;
-  border-bottom: 2px solid var(--primary);
-  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .heroSection {
+    height: auto;
+    padding: 3rem 0 4rem 0 !important;
+    min-height: auto;
+  }
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .heroContent {
+    margin-bottom: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .heroGraphic {
+    display: none;
+  }
 }
 
 .heroContent {
@@ -71,6 +88,26 @@
   z-index: 20;
   padding: 2rem 0;
   margin-bottom: 4rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .statsSection {
+    margin-top: 1.5rem;
+    box-shadow: none;
+    border: none;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    background: transparent;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 .statBlock {
@@ -307,12 +344,18 @@
 }
 
 /* How It Works Section */
-.phoneContainer {
-  position: relative;
-  display: flex;
-  justify-content: center;
+.pricingGrid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 1fr;
+  gap: 3rem;
   align-items: center;
-  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .phoneMockup {
@@ -391,10 +434,18 @@
   gap: 2.5rem;
 }
 
-.stepItem {
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) minmax(300px, 1fr);
+  gap: 4rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }
 
 .stepIcon {
@@ -418,27 +469,27 @@
   line-height: 1.6;
 }
 
+.howItWorksGrid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.8rem;
+  .howItWorksGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-
-  .statsSection {
-    margin-top: 2rem;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    margin-bottom: 2rem;
+  .phoneContainer {
+    padding: 1rem 0;
   }
-
-  .statBlock {
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 1.5rem 0;
+  .phoneMockup {
+    width: 200px;
+    height: 400px;
   }
-
-  .statBlock:last-child {
-    border-bottom: none;
+  .phoneFloatingBadge {
+    display: none;
   }
 }
 

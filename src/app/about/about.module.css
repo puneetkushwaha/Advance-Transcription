@@ -5,10 +5,16 @@
 }
 
 .aboutHero {
-  padding: 8rem 0 4rem 0;
+  padding: 4rem 0 2.5rem 0;
   background-color: #f8fafc;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .aboutHero {
+    padding: 3rem 0 2rem 0;
+  }
 }
 
 .heroTitle {
@@ -20,10 +26,42 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* Precision Section */
 .precisionSection {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background-color: white;
+}
+
+.precisionGrid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .precisionSection {
+    padding: 3rem 0;
+  }
+  .precisionGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .precisionTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .precisionText {
+    font-size: 1.1rem;
+  }
 }
 
 .precisionTitle {
@@ -46,6 +84,15 @@
   background-color: #f0fdf4;
   border-top: 1px solid #dcfce7;
   border-bottom: 1px solid #dcfce7;
+}
+
+@media (max-width: 768px) {
+  .statsSection {
+    padding: 2.5rem 0;
+  }
+  .statNumber {
+    font-size: 2.5rem;
+  }
 }
 
 .statsGrid {
@@ -73,8 +120,14 @@
 
 /* Mission & Vision Cards */
 .missionSection {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .missionSection {
+    padding: 3rem 0;
+  }
 }
 
 .missionGrid {
@@ -125,8 +178,14 @@
 
 /* What Sets Us Apart Grid - 5 columns */
 .apartSection {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background-color: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .apartSection {
+    padding: 3.5rem 0;
+  }
 }
 
 .apartGrid {
@@ -172,8 +231,14 @@
 
 /* Who We Serve Section */
 .whoSection {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .whoSection {
+    padding: 3rem 0;
+  }
 }
 
 .whoGrid {

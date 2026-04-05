@@ -25,7 +25,7 @@ export default function IMETranscriptionPage() {
 
       {/* Precision Section */}
       <section className={styles.deliveredFast}>
-        <div className={styles.container} style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className={`${styles.container} ${styles.deliveredGrid}`}>
           <div>
             <h2 className={styles.deliveredTitle}>Defensible Accuracy.</h2>
             <p className={styles.deliveredText}>

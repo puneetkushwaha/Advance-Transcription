@@ -32,6 +32,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -136,6 +137,26 @@ p {
 .section-white {
   background-color: #ffffff;
   padding: 4rem 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.4rem !important; }
+  
+  .section-grey, .section-white {
+    padding: 2.5rem 0 !important;
+  }
+  
+  .container {
+    padding: 0 1.25rem !important;
+  }
+
+  /* Hide custom cursor on mobile/touch */
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
 /* Footer Developer Credit */

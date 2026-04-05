@@ -5,10 +5,16 @@
 }
 
 .pricingHero {
-  padding: 6rem 0 4rem 0;
+  padding: 4rem 0 2rem 0;
   background-color: #0f172a;
   text-align: center;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .pricingHero {
+    padding: 3rem 0;
+  }
 }
 
 .heroTitle {
@@ -20,7 +26,7 @@
 }
 
 .subHero {
-  padding: 4rem 0;
+  padding: 3rem 0;
   text-align: center;
   background-color: white;
 }
@@ -29,7 +35,16 @@
   font-size: 2rem;
   color: #10b981;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .subTitle {
+    font-size: 1.5rem;
+  }
+  .subText {
+    font-size: 1rem;
+  }
 }
 
 .subText {
@@ -42,7 +57,7 @@
 
 /* Rates Table */
 .ratesSection {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background-color: white;
 }
 
@@ -50,8 +65,14 @@
   text-align: center;
   font-size: 2.2rem;
   color: #10b981;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .ratesTitle {
+    font-size: 1.75rem;
+  }
 }
 
 .tableWrapper {
@@ -94,8 +115,22 @@
 
 /* Unlimited Plan Section */
 .unlimitedSection {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .unlimitedSection {
+    padding: 2.5rem 0;
+  }
+  .unlimitedTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .priceTag {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .unlimitedGrid {
@@ -140,8 +175,14 @@
 
 /* Always Included */
 .includedSection {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .includedSection {
+    padding: 2.5rem 0;
+  }
 }
 
 .includedGrid {
@@ -153,16 +194,18 @@
 
 /* Custom Pricing */
 .customSection {
-  padding: 6rem 0;
-  background-image: linear-gradient(rgba(240, 253, 244, 0.9), rgba(240, 253, 244, 0.9)), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80');
-  background-size: cover;
-  background-position: center;
+  padding: 4rem 0;
 }
 
-/* Billing Details */
 .billingSection {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .customSection, .billingSection {
+    padding: 2.5rem 0;
+  }
 }
 
 .billingGrid {
