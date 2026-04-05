@@ -237,8 +237,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Flab badge similar to the user's mockup */}
-            <div className={styles.phoneFloatingBadge}>ADVANCE</div>
+
+
           </div>
 
           {/* Right: Steps Content */}
