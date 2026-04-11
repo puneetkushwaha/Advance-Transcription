@@ -1,9 +1,15 @@
+import { getSettings } from '@/lib/db';
+
+export const revalidate = 0;
+
 export const metadata = {
   title: 'Privacy Policy | Advance Transcription',
   description: 'Read the Privacy Policy for Advance Transcription Services. Learn how we collect, use, and protect your personal and medical information.',
 };
 
-export default function PrivacyPolicy() {
+export default async function PrivacyPolicy() {
+  const settings = await getSettings();
+
   return (
     <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
 
@@ -114,9 +120,9 @@ To exercise any of these rights, please contact us using the information below.`
                 content: `If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:
 
 Advance Transcription
-Email: ${process.env.NEXT_PUBLIC_CLIENT_EMAIL || 'info@advancetranscription.com'}
-Phone: ${process.env.NEXT_PUBLIC_CLIENT_PHONE || '+1 (727) 308-2312'}
-Address: ${process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE1 || '4604 49th St N #5095'}, ${process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE2 || 'Saint Petersburg, FL 33709'}`
+Email: ${settings.client_email}
+Phone: ${settings.client_phone}
+Address: ${settings.address_line1}, ${settings.address_line2}`
               }
             ].map((section, i) => (
               <div key={i} style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: i < 10 ? '1px solid #f1f5f9' : 'none' }}>

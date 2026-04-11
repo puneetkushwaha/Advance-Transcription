@@ -7,7 +7,14 @@ export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcode, setPasscode] = useState('');
   const [data, setData] = useState({ contacts: [], demo_requests: [], signups: [] });
+  const [settings, setSettings] = useState({
+    client_email: '',
+    client_phone: '',
+    address_line1: '',
+    address_line2: ''
+  });
   const [loading, setLoading] = useState(false);
+  const [saveLoading, setSaveLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('demo_requests');
 
   const handleLogin = async (e) => {
@@ -20,6 +27,14 @@ export default function AdminDashboard() {
       if (res.ok) {
         const json = await res.json();
         setData(json);
+        
+        // Fetch current settings with cache-busting
+        const settingsRes = await fetch('/api/settings?t=' + Date.now());
+        if (settingsRes.ok) {
+          const settingsJson = await settingsRes.json();
+          setSettings(settingsJson);
+        }
+        
         setIsAuthenticated(true);
       } else {
         alert('Unauthorized: Incorrect Passcode');
@@ -40,11 +55,46 @@ export default function AdminDashboard() {
       if (res.ok) {
         const json = await res.json();
         setData(json);
+
+        const settingsRes = await fetch('/api/settings?t=' + Date.now());
+        if (settingsRes.ok) {
+          const settingsJson = await settingsRes.json();
+          setSettings(settingsJson);
+        }
       }
     } catch (err) {
       console.error('Fetch error:', err);
     } finally {
       setLoading(false);
+    }
+  };
+  const handleSaveSettings = async () => {
+    setSaveLoading(true);
+    console.log('[Client] Starting save process...');
+    console.log('[Client] Settings to save:', settings);
+    
+    try {
+      const res = await fetch('/api/admin/settings', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-admin-passcode': passcode
+        },
+        body: JSON.stringify({ settings })
+      });
+      
+      console.log('[Client] API Response status:', res.status);
+      if (res.ok) {
+        alert('Settings updated successfully!');
+        // No need to re-fetch immediately to avoid race conditions with DB replication/caching
+      } else {
+        const error = await res.json();
+        alert(`Error: ${error.error || 'Failed to update settings'}`);
+      }
+    } catch (err) {
+      alert('An error occurred while saving settings.');
+    } finally {
+      setSaveLoading(false);
     }
   };
 
@@ -181,6 +231,12 @@ export default function AdminDashboard() {
               style={{ padding: '0.8rem 1.5rem', borderRadius: '8px', cursor: 'pointer', border: 'none', background: activeTab === 'contacts' ? '#6366f1' : 'white', color: activeTab === 'contacts' ? 'white' : '#64748b', fontWeight: 'bold' }}
             >
               Contacts ({data.contacts.filter(item => item.organization_name).length})
+            </button>
+            <button 
+              onClick={() => setActiveTab('settings')}
+              style={{ padding: '0.8rem 1.5rem', borderRadius: '8px', cursor: 'pointer', border: 'none', background: activeTab === 'settings' ? '#f59e0b' : 'white', color: activeTab === 'settings' ? 'white' : '#64748b', fontWeight: 'bold' }}
+            >
+              ⚙️ Site Settings
             </button>
           </div>
 
@@ -327,6 +383,79 @@ export default function AdminDashboard() {
                     ))}
                   </tbody>
                 </table>
+              )}
+
+              {activeTab === 'settings' && (
+                <div style={{ padding: '2rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', margin: 0, color: '#0f172a' }}>Website Contact Information</h3>
+                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Changes will reflect immediately on the website.</div>
+                  </div>
+                  
+                  <form onSubmit={e => e.preventDefault()} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#64748b' }}>Support Email</label>
+                      <input 
+                        type="email" 
+                        value={settings.client_email}
+                        onChange={e => setSettings({...settings, client_email: e.target.value})}
+                        style={{ padding: '0.8rem', border: '1px solid #e2e8f0', borderRadius: '8px', outline: 'none' }}
+                        placeholder="info@example.com"
+                      />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#64748b' }}>Contact Phone</label>
+                      <input 
+                        type="text" 
+                        value={settings.client_phone}
+                        onChange={e => setSettings({...settings, client_phone: e.target.value})}
+                        style={{ padding: '0.8rem', border: '1px solid #e2e8f0', borderRadius: '8px', outline: 'none' }}
+                        placeholder="+1 234 567 890"
+                      />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#64748b' }}>Address Line 1</label>
+                      <input 
+                        type="text" 
+                        value={settings.address_line1}
+                        onChange={e => setSettings({...settings, address_line1: e.target.value})}
+                        style={{ padding: '0.8rem', border: '1px solid #e2e8f0', borderRadius: '8px', outline: 'none' }}
+                        placeholder="123 Main St"
+                      />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#64748b' }}>Address Line 2 (City, Country)</label>
+                      <input 
+                        type="text" 
+                        value={settings.address_line2}
+                        onChange={e => setSettings({...settings, address_line2: e.target.value})}
+                        style={{ padding: '0.8rem', border: '1px solid #e2e8f0', borderRadius: '8px', outline: 'none' }}
+                        placeholder="New York, USA"
+                      />
+                    </div>
+                    <div style={{ gridColumn: 'span 2', marginTop: '1rem', borderTop: '1px solid #f1f5f9', paddingTop: '1.5rem' }}>
+                      <button 
+                        type="button" 
+                        onClick={handleSaveSettings}
+                        disabled={saveLoading}
+                        style={{ 
+                          padding: '1rem 2.5rem', 
+                          background: '#f59e0b', 
+                          color: 'white', 
+                          border: 'none', 
+                          borderRadius: '8px', 
+                          fontWeight: 'bold', 
+                          cursor: saveLoading ? 'not-allowed' : 'pointer',
+                          opacity: saveLoading ? 0.7 : 1,
+                          fontSize: '1rem',
+                          boxShadow: '0 4px 6px -1px rgba(245, 158, 11, 0.2)'
+                        }}
+                      >
+                        {saveLoading ? 'Saving...' : 'Save Configuration'}
+                      </button>
+                    </div>
+                  </form>
+                </div>
               )}
 
               {(!loading && (

@@ -1,19 +1,24 @@
 import './globals.css';
 import Link from 'next/link';
 import Navbar from './Navbar';
+import { getSettings } from '@/lib/db';
+
+export const revalidate = 0;
 
 export const metadata = {
   title: 'Advance Transcription | Reliable Medical & Legal Transcription',
   description: 'Fast, secure, and accurate medical and legal transcription services with guaranteed 12-hour turnaround.',
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const settings = await getSettings();
+
   return (
     <html lang="en">
       <body>
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
-          <Navbar />
+          <Navbar settings={settings} />
 
           {/* Main Content */}
           <main style={{ flex: '1', backgroundColor: '#ffffff' }}>
@@ -64,12 +69,12 @@ export default function RootLayout({ children }) {
                 <div>
                   <h3 style={{ fontSize: '1.2rem', color: 'white', borderBottom: '2px solid var(--primary)', paddingBottom: '0.5rem', display: 'inline-block', marginBottom: '1.5rem' }}>Contact Info</h3>
                   <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem' }}>
-                    <li><strong style={{ color: 'var(--primary)' }}>Email:</strong> {process.env.NEXT_PUBLIC_CLIENT_EMAIL}</li>
-                    <li><strong style={{ color: 'var(--primary)' }}>Phone:</strong> {process.env.NEXT_PUBLIC_CLIENT_PHONE}</li>
+                    <li><strong style={{ color: 'var(--primary)' }}>Email:</strong> {settings.client_email}</li>
+                    <li><strong style={{ color: 'var(--primary)' }}>Phone:</strong> {settings.client_phone}</li>
                     <li style={{ marginTop: '0.5rem', opacity: 0.8, fontSize: '0.85rem', lineHeight: '1.5' }}>
                       <strong style={{ color: 'var(--primary)' }}>Address:</strong><br/>
-                      {process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE1}<br/>
-                      {process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE2}
+                      {settings.address_line1}<br/>
+                      {settings.address_line2}
                     </li>
                   </ul>
                 </div>

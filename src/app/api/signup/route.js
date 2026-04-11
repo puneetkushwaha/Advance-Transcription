@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { addEntry } from '@/lib/db';
+import { addEntry, getSettings } from '@/lib/db';
 
 const resend = new Resend(process.env.EMAIL_API_KEY);
 
@@ -16,7 +16,8 @@ export async function POST(request) {
       );
     }
 
-    const recipientEmail = process.env.NEXT_PUBLIC_CLIENT_EMAIL || 'puneetkushwaha88@gmail.com';
+    const settings = await getSettings();
+    const recipientEmail = settings.client_email || 'info@advancetranscription.com';
 
     // Persist to local JSON database for Admin Portal
     await addEntry('signups', { 
@@ -125,7 +126,7 @@ export async function POST(request) {
 
               <div style="text-align: center; margin-top: 30px; font-size: 12px; color: #94a3b8; padding-bottom: 40px;">
                 &copy; ${new Date().getFullYear()} Advance Transcription Services. <br/>
-                Precision Healthcare Documentation Since 1999.
+                ${settings.address_line1}, ${settings.address_line2}
               </div>
             </div>
           </body>

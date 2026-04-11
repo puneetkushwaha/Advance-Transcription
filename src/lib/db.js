@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { supabase, supabaseAdmin } from './supabase';
 
 export async function getDB() {
   try {
@@ -56,6 +56,59 @@ export async function addEntry(category, entry) {
     return true;
   } catch (error) {
     console.error('Supabase insert error:', error);
+    return false;
+  }
+}
+
+export async function getSettings() {
+  try {
+    const { data, error } = await supabaseAdmin.from('site_settings').select('*');
+    if (error) {
+      console.error('[Settings] Supabase fetch error:', JSON.stringify(error, null, 2));
+      throw error;
+    }
+    
+    console.log('[Settings] Successfully fetched from DB. Row count:', data?.length);
+    
+    const settings = {};
+    data.forEach(item => {
+      settings[item.key] = item.value;
+    });
+    
+    if (Object.keys(settings).length > 0) {
+      return settings;
+    }
+    
+    throw new Error('No settings found in database');
+  } catch (error) {
+    console.error('[Settings] Falling back to ENV:', error.message);
+    return {
+      client_email: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
+      client_phone: process.env.NEXT_PUBLIC_CLIENT_PHONE,
+      address_line1: process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE1,
+      address_line2: process.env.NEXT_PUBLIC_CLIENT_ADDRESS_LINE2,
+    };
+  }
+}
+
+export async function updateSetting(key, value) {
+  try {
+    console.log(`[Admin] Attempting to update setting: ${key} = ${value}`);
+    
+    const { data, error } = await supabaseAdmin
+      .from('site_settings')
+      .upsert({ key, value, updated_at: new Date() })
+      .select();
+    
+    if (error) {
+      console.error(`[Admin ERROR] Supabase update fail for key ${key}:`, JSON.stringify(error, null, 2));
+      throw error;
+    }
+    
+    console.log(`[Admin SUCCESS] Updated setting: ${key}. Row:`, data);
+    return true;
+  } catch (error) {
+    console.error(`[Admin EXCEPTION] Failed to update setting ${key}:`, error.message || error);
     return false;
   }
 }

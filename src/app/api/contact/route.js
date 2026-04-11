@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { addEntry } from '@/lib/db';
+import { addEntry, getSettings } from '@/lib/db';
 
 // Initialize Resend with the key from your .env.local
 const resend = new Resend(process.env.EMAIL_API_KEY);
@@ -17,7 +17,8 @@ export async function POST(request) {
       );
     }
 
-    const recipientEmail = process.env.NEXT_PUBLIC_CLIENT_EMAIL || 'info@advancetranscription.com';
+    const settings = await getSettings();
+    const recipientEmail = settings.client_email || 'info@advancetranscription.com';
  
     // Persist to database for Admin Portal
     await addEntry('contacts', { name, email, phone, serviceType, message, organizationName, formSource });
@@ -122,7 +123,7 @@ export async function POST(request) {
                 </div>
 
                 <div style="text-align: center; margin-top: 40px;">
-                  <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">Need immediate assistance? Speak with us at +1 (727) 308-2312.</p>
+                  <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">Need immediate assistance? Speak with us at ${settings.client_phone}.</p>
                   <a href="https://advancetranscription.com/pricing" style="display: inline-block; background: #0047ff; color: #ffffff !important; padding: 14px 32px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">
                     Explore Service Plans
                   </a>
@@ -131,7 +132,7 @@ export async function POST(request) {
 
               <div style="text-align: center; margin-top: 30px; font-size: 12px; color: #94a3b8; padding-bottom: 40px;">
                 &copy; ${new Date().getFullYear()} Advance Transcription Services. <br/>
-                4604 49th St N #5095, Saint Petersburg, FL 33709
+                ${settings.address_line1}, ${settings.address_line2}
               </div>
             </div>
           </body>

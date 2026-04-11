@@ -1,11 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function Navbar() {
+export default function Navbar({ settings: initialSettings }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [settings, setSettings] = useState(initialSettings || {
+    client_email: '',
+    client_phone: ''
+  });
+
+  // Sync state if props change (optional but good for HMR)
+  useEffect(() => {
+    if (initialSettings) {
+      setSettings(initialSettings);
+    }
+  }, [initialSettings]);
 
   return (
     <>
@@ -13,9 +24,9 @@ export default function Navbar() {
       <div style={{ backgroundColor: '#f3f4f6', borderBottom: '1px solid var(--border)', padding: '0.5rem 0', fontSize: '0.85rem', color: '#6b7280' }} className="top-bar-desktop">
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <a href={`mailto:${process.env.NEXT_PUBLIC_CLIENT_EMAIL}`} style={{ marginRight: '1rem' }}>{process.env.NEXT_PUBLIC_CLIENT_EMAIL}</a>
+            <a href={`mailto:${settings.client_email}`} style={{ marginRight: '1rem' }}>{settings.client_email}</a>
             <span style={{ margin: '0 0.5rem' }}>/</span>
-            <a href={`tel:${(process.env.NEXT_PUBLIC_CLIENT_PHONE || '').replace(/[^0-9+]/g, '')}`} style={{ marginLeft: '1rem', fontWeight: 'bold' }}>{process.env.NEXT_PUBLIC_CLIENT_PHONE}</a>
+            <a href={`tel:${(settings.client_phone || '').replace(/[^0-9+]/g, '')}`} style={{ marginLeft: '1rem', fontWeight: 'bold' }}>{settings.client_phone}</a>
           </div>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <Link href="/signup" style={{ fontWeight: '600', color: 'var(--primary)' }}>Sign up</Link>
@@ -85,7 +96,7 @@ export default function Navbar() {
           <div className="mobile-menu" style={{ position: 'fixed', top: '105px', left: 0, width: '100%', height: 'calc(100vh - 105px)', backgroundColor: '#ffffff', borderTop: '1px solid var(--border)', padding: '1.5rem 0', zIndex: 999, overflowY: 'auto' }}>
             <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontSize: '1.1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #f3f4f6', paddingBottom: '1rem' }}>
-                <a href={`tel:${(process.env.NEXT_PUBLIC_CLIENT_PHONE || '').replace(/[^0-9+]/g, '')}`} style={{ fontWeight: 'bold', color: 'var(--primary)' }}>📞 {process.env.NEXT_PUBLIC_CLIENT_PHONE}</a>
+                <a href={`tel:${(settings.client_phone || '').replace(/[^0-9+]/g, '')}`} style={{ fontWeight: 'bold', color: 'var(--primary)' }}>📞 {settings.client_phone}</a>
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} style={{ fontWeight: '600', fontSize: '0.9rem' }}>Login</Link>
                   <Link href="/signup" onClick={() => setIsMobileMenuOpen(false)} style={{ fontWeight: '600', fontSize: '0.9rem', color: 'var(--primary)' }}>Sign up</Link>
