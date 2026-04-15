@@ -171,13 +171,16 @@ export default async function RootLayout({ children }) {
             {/* Copyright Bar */}
             <div style={{ backgroundColor: '#0f172a', padding: '1.5rem 0', fontSize: '0.85rem' }}>
               <div className="container footer-copyright">
+                <p style={{ margin: 0, opacity: 0.8 }}>
+                  © {new Date().getFullYear()} Advance Transcription. All rights reserved.
+                </p>
                 <a
                   href="https://www.vervenovatech.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-dev-link"
                 >
-                  Verve Nova Technologies Pvt. Ltd.
+                  Developed by Verve Nova Technologies Pvt. Ltd.
                 </a>
               </div>
             </div>
