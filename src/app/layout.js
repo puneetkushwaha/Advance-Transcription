@@ -45,6 +45,10 @@ export const metadata = {
     title: 'Advance Transcription | Reliable Medical & Legal Transcription',
     description: 'Fast, secure, and accurate medical and legal transcription services.',
   },
+  icons: {
+    icon: '/transparent.png',
+    apple: '/transparent.png',
+  },
   robots: {
     index: true,
     follow: true,
