@@ -4,8 +4,25 @@ import Link from 'next/link';
 import styles from '../service-detail.module.css';
 
 export default function MedicalTranscriptionPage() {
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Medical Transcription Service',
+    description: 'HIPAA-compliant medical transcription services for healthcare providers, with 12-hour turnaround and EHR integration.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Advance Transcription'
+    },
+    areaServed: 'United States',
+    serviceType: 'Medical Transcription'
+  };
+
   return (
     <div className={styles.medicalPage}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Editorial Hero */}
       <section className={styles.medicalHero}>
         <div className={styles.container}>

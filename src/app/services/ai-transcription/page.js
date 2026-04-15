@@ -4,8 +4,25 @@ import Link from 'next/link';
 import styles from '../service-detail.module.css';
 
 export default function AITranscriptionPage() {
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI-Powered Transcription Service',
+    description: 'Fast, scalable, and cost-effective AI transcription-powered with optional human review for business, education, and research.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Advance Transcription'
+    },
+    areaServed: 'United States',
+    serviceType: 'AI Transcription'
+  };
+
   return (
     <div className={styles.aiPage}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Editorial Hero */}
       <section className={styles.medicalHero}>
         <div className={styles.container}>

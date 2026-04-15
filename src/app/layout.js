@@ -6,8 +6,86 @@ import { getSettings } from '@/lib/db';
 export const revalidate = 0;
 
 export const metadata = {
-  title: 'Advance Transcription | Reliable Medical & Legal Transcription',
-  description: 'Fast, secure, and accurate medical and legal transcription services with guaranteed 12-hour turnaround.',
+  metadataBase: new URL('https://advancetranscription.com'),
+  title: {
+    default: 'Advance Transcription | Reliable Medical & Legal Transcription Services',
+    template: '%s | Advance Transcription'
+  },
+  description: 'Advance Transcription provides fast, secure, and accurate medical and legal transcription services with guaranteed 12-hour turnaround. HIPAA compliant and EHR integrated.',
+  keywords: [
+    'transcription services',
+    'medical transcription',
+    'legal transcription',
+    'advance transcription',
+    'HIPAA compliant transcription',
+    'EHR integrated transcription',
+    'IME transcription',
+    'AI transcription',
+    'accurate transcription',
+    'fast transcription turnaround'
+  ],
+  authors: [{ name: 'Verve Nova Private Limited' }],
+  creator: 'Verve Nova Private Limited',
+  publisher: 'Advance Transcription',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: 'Advance Transcription | Reliable Medical & Legal Transcription',
+    description: 'Fast, secure, and accurate medical and legal transcription services. 100% HIPAA compliant.',
+    url: 'https://advancetranscription.com',
+    siteName: 'Advance Transcription',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Advance Transcription | Reliable Medical & Legal Transcription',
+    description: 'Fast, secure, and accurate medical and legal transcription services.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Advance Transcription',
+  url: 'https://advancetranscription.com',
+  logo: 'https://advancetranscription.com/logo.jpg',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-xxx-xxx-xxxx', // Will be dynamic if possible, but Organization needs a fixed one usually
+    contactType: 'customer service',
+    availableLanguage: 'en'
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/advancetranscription',
+    'https://www.vervenovatech.com/'
+  ]
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Advance Transcription',
+  url: 'https://advancetranscription.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://advancetranscription.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
 };
 
 export default async function RootLayout({ children }) {
@@ -15,6 +93,16 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body>
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
@@ -85,12 +173,12 @@ export default async function RootLayout({ children }) {
               <div className="container footer-copyright">
                 <span>&copy; {new Date().getFullYear()} Advance Transcription. All Rights Reserved.</span>
                 <a
-                  href="https://www.linkedin.com/in/puneettkushwaha/"
+                  href="https://www.vervenovatech.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-dev-link"
                 >
-                  Developed by Puneet Kushwaha
+                  Developed by Verve Nova Private Limited
                 </a>
               </div>
             </div>

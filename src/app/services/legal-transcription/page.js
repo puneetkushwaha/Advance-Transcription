@@ -4,8 +4,25 @@ import Link from 'next/link';
 import styles from '../service-detail.module.css';
 
 export default function LegalTranscriptionPage() {
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Legal Transcription Service',
+    description: 'Secure, timely, and highly accurate transcription services for legal, medicolegal, and law enforcement professionals.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Advance Transcription'
+    },
+    areaServed: 'United States',
+    serviceType: 'Legal Transcription'
+  };
+
   return (
     <div className={styles.legalPage}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Editorial Hero */}
       <section className={styles.medicalHero}>
         <div className={styles.container}>

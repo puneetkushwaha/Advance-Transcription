@@ -28,8 +28,86 @@ export default function Home() {
     }
   };
 
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Advance Transcription',
+    image: 'https://advancetranscription.com/logo.jpg',
+    '@id': 'https://advancetranscription.com',
+    url: 'https://advancetranscription.com',
+    telephone: '+1-xxx-xxx-xxxx',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Your Address',
+      addressLocality: 'City',
+      addressRegion: 'ST',
+      postalCode: 'ZIP',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 'xx.xxxx',
+      longitude: 'xx.xxxx'
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+      ],
+      opens: '09:00',
+      closes: '18:00'
+    }
+  };
+
+  const servicesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Transcription Services',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Advance Transcription'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'United States'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Transcription Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Medical Transcription'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Legal Transcription'
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <div className={styles.homeContainer}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
 
       {/* Compact & Striking Hero Section */}
       <section className={styles.heroSection}>
